@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 export function Layout() {
   return (
-    <div>
+    <>
       <Header />
 
       <main>
@@ -12,6 +12,6 @@ export function Layout() {
       </main>
 
       <Footer />
-    </div>
+    </>
   );
 }
