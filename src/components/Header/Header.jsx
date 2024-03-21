@@ -1,9 +1,31 @@
 import { Nav } from "../Nav/Nav";
 import logo from "../../assets/homepage/logo.png";
+import { useToggler } from "../../hook/useToggler";
 
-function Button() {
+export function Header() {
+  const [active, handleActive] = useToggler();
+
   return (
-    <button aria-label="open navigation" className="lg:hidden">
+    <header className="header bg-red-400">
+      <div className="header-wrapper outline h-full flex justify-between items-center">
+        <div>
+          <img src={logo} alt="Logo" />
+        </div>
+        <Button handleActive={handleActive} />
+        <Nav active={active} handleActive={handleActive} />
+      </div>
+    </header>
+  );
+}
+
+/* Components  */
+function Button({ handleActive }) {
+  return (
+    <button
+      aria-label="open navigation"
+      className="lg:hidden"
+      onClick={handleActive}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -19,19 +41,5 @@ function Button() {
         />
       </svg>
     </button>
-  );
-}
-
-export function Header() {
-  return (
-    <header className="header bg-red-400">
-      <div className="header-wrapper outline h-full flex justify-between items-center">
-        <div>
-          <img src={logo} alt="" />
-        </div>
-        <Button />
-        <Nav />
-      </div>
-    </header>
   );
 }
