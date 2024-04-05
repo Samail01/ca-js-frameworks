@@ -1,17 +1,20 @@
 import { Nav } from "../Nav/Nav";
-import logo from "../../assets/homepage/logo.png";
 import { useToggler } from "../../hook/useToggler";
+import { Cart } from "../../routes/Cart/Cart";
 
 export function Header() {
   const [active, handleActive] = useToggler();
 
   return (
-    <header className="header bg-red-400">
-      <div className="header-wrapper outline h-full flex justify-between items-center">
-        <div>
-          <img src={logo} alt="Logo" />
+    <header className="header bg-blue-dark">
+      <div className="header-wrapper outline h-full flex justify-between items-center p-5">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          Every<span className="text-blue-normal">Cart</span>
+        </h1>
+        <div className="flex items-center text-white">
+          <Cart />
+          <Button handleActive={handleActive} />
         </div>
-        <Button handleActive={handleActive} />
         <Nav active={active} handleActive={handleActive} />
       </div>
     </header>

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./layout/Layout.jsx";
@@ -8,6 +7,8 @@ import { HelmetProvider } from "react-helmet-async";
 import { Cart } from "./routes/Cart/Cart.jsx";
 import { Checkout } from "./routes/Checkout/Checkout.jsx";
 import { Specific } from "./routes/Specific/Specific.jsx";
+import { Home } from "./routes/Home/Home.jsx";
+import { Contact } from "./routes/Contact/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <App />,
+        element: <Home />,
       },
       {
         path: "/cart",
@@ -27,8 +28,12 @@ const router = createBrowserRouter([
         element: <Checkout />,
       },
       {
-        path: "/specific",
+        path: "/specific/:id",
         element: <Specific />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
