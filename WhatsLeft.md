@@ -1,0 +1,5 @@
+- Cart icon
+- Look ahead auto complete Search bar ------OK------
+- Cart state
+- The CheckoutPage must list all of the products in the cart, show a total at the bottom and a Checkout button.
+- Clicking the Checkout button will take the user to the CheckoutSuccessPage.

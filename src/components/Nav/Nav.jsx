@@ -5,16 +5,16 @@ import NavLinks from "./Navlinks";
 export function Nav({ active, handleActive }) {
   return (
     <nav
-      className={`nav fixed top-0 right-0 h-full w-full bg-orange-400 transition-all lg:translate-x-0 lg:w-auto lg:static
+      className={`nav fixed top-0 right-0 h-full w-full bg-blue-dark transition-all lg:translate-x-0 lg:w-auto lg:static
        ${active ? "translate-x-0" : "translate-x-full"}`}
     >
-      <div className="nav-wrapper wrapper bg-purple-400 w-full h-full flex-col">
-        <div className="bg-white h-[5rem] lg:hidden flex justify-end items-center">
+      <div className="nav-wrapper wrapper w-full h-full flex-col">
+        <div className=" h-[5rem] lg:hidden flex justify-end items-center">
           <Button handleActive={handleActive} />
         </div>
         {/* Får ut navlinks */}
         <ul
-          className={`bg-pink-400 w-full h-full lg:flex lg:justify-end lg:space-x-28 lg:items-center p-5 ${
+          className={`bg-blue-normal w-full h-full lg:flex lg:justify-end lg:space-x-28 lg:items-center p-5 ${
             active ? "lg:block" : "hidden"
           }`}
         >
