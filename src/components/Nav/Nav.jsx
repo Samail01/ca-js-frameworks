@@ -1,26 +1,36 @@
+// Nav.jsx
 import { Link } from "react-router-dom";
 import NavLinks from "./Navlinks";
 
-// eslint-disable-next-line react/prop-types
 export function Nav({ active, handleActive }) {
+  // Function to close the nav when a link is clicked
+  const handleLinkClick = () => {
+    handleActive(); // This function toggles the navigation
+  };
+
   return (
     <nav
-      className={`nav fixed top-0 right-0 h-full w-full bg-blue-dark transition-all lg:translate-x-0 lg:w-auto lg:static
+      className={`nav fixed z-50 top-0 right-0 h-full w-full bg-blue-dark transition-all lg:translate-x-0 lg:w-auto lg:static
        ${active ? "translate-x-0" : "translate-x-full"}`}
     >
       <div className="nav-wrapper wrapper w-full h-full flex-col">
-        <div className=" h-[5rem] lg:hidden flex justify-end items-center">
+        <div className="h-[5rem] lg:hidden flex justify-end items-center">
           <Button handleActive={handleActive} />
         </div>
-        {/* Får ut navlinks */}
         <ul
-          className={`bg-blue-normal w-full h-full lg:flex lg:justify-end lg:space-x-28 lg:items-center p-5 ${
+          className={` w-full h-full text-2xl lg:flex lg:justify-end lg:space-x-28 lg:items-center p-5 ${
             active ? "lg:block" : "hidden"
           }`}
         >
           {NavLinks.map(({ id, path, label }) => (
-            <li key={id}>
-              <Link to={path}>{label}</Link>
+            <li key={id} className="p-2">
+              <Link
+                to={path}
+                onClick={handleLinkClick}
+                className="text-white hover:text-gray-200"
+              >
+                {label}
+              </Link>
             </li>
           ))}
         </ul>
@@ -31,7 +41,11 @@ export function Nav({ active, handleActive }) {
 
 function Button({ handleActive }) {
   return (
-    <button aria-label="close navigation" onClick={handleActive}>
+    <button
+      aria-label="close navigation"
+      onClick={handleActive}
+      className="p-2"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -43,7 +57,7 @@ function Button({ handleActive }) {
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M6 18 18 6M6 6l12 12"
+          d="M6 18L18 6M6 6l12 12"
         />
       </svg>
     </button>

@@ -90,12 +90,12 @@ export function Home() {
                 </div>
                 <div className="mt-auto">
                   <button
-                    className="flex justify-center items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2 w-full"
+                    className="flex justify-center items-center bg-blue-normal hover:bg-blue-normal-hover text-white font-bold py-3 w-full transition duration-150 ease-in-out"
                     onClick={() => handleViewProduct(product.id)}
                   >
                     View
                   </button>
-                  <button className="flex justify-center items-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded m-2 w-full">
+                  <button className="flex justify-center items-center bg-blue-dark hover:bg-blue-dark-hover text-white font-bold py-3 w-full transition duration-150 ease-in-out">
                     Add to Cart
                   </button>
                 </div>
