@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "../../hook/useFetch";
 import { useNavigate } from "react-router-dom";
+import { Discount } from "../../components/Discount/Discount";
+import { useCart } from "../../hook/useCartContext";
 
 export function Home() {
   const navigate = useNavigate();
@@ -10,6 +12,7 @@ export function Home() {
     loading,
     error,
   } = useFetch("https://v2.api.noroff.dev/online-shop");
+  const { addToCart } = useCart();
 
   useEffect(() => {
     if (products) {
@@ -19,6 +22,10 @@ export function Home() {
 
   const handleViewProduct = (id) => {
     navigate(`/specific/${id}`);
+  };
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
   };
 
   if (loading) return <p className="text-center text-lg">Loading...</p>;
@@ -62,8 +69,14 @@ export function Home() {
             .map((product) => (
               <div
                 key={product.id}
-                className="flex flex-col border rounded overflow-hidden shadow-lg h-full"
+                className="flex flex-col border rounded overflow-hidden shadow-lg h-full relative"
               >
+                {product.discountedPrice && (
+                  <Discount
+                    originalPrice={product.price}
+                    discountedPrice={product.discountedPrice}
+                  />
+                )}
                 <div className="flex-shrink-0">
                   <img
                     className="w-full h-48 object-cover"
@@ -76,12 +89,18 @@ export function Home() {
                   <p className="text-gray-700 text-base mb-4">
                     {product.description}
                   </p>
-                  <p className="text-gray-900 font-semibold">
-                    ${product.discountedPrice}
-                  </p>
-                  {product.price && (
-                    <p className="text-gray-600 text-sm line-through">
-                      Was ${product.price}
+                  {product.discountedPrice ? (
+                    <>
+                      <p className="text-red-500 font-semibold">
+                        {product.discountedPrice} kr
+                      </p>
+                      <p className="text-gray-600 text-sm line-through">
+                        {product.price} kr
+                      </p>
+                    </>
+                  ) : (
+                    <p className="text-gray-900 font-semibold">
+                      {product.price} kr
                     </p>
                   )}
                   <p className="text-yellow-500 text-xs">
@@ -95,7 +114,10 @@ export function Home() {
                   >
                     View
                   </button>
-                  <button className="flex justify-center items-center bg-blue-dark hover:bg-blue-dark-hover text-white font-bold py-3 w-full transition duration-150 ease-in-out">
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className="flex justify-center items-center bg-blue-dark hover:bg-blue-dark-hover text-white font-bold py-3 w-full transition duration-150 ease-in-out"
+                  >
                     Add to Cart
                   </button>
                 </div>

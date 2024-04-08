@@ -4,11 +4,12 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./layout/Layout.jsx";
 import { HelmetProvider } from "react-helmet-async";
-import { Cart } from "./routes/Cart/Cart.jsx";
-import { Checkout } from "./routes/Checkout/Checkout.jsx";
 import { Specific } from "./routes/Specific/Specific.jsx";
 import { Home } from "./routes/Home/Home.jsx";
 import { Contact } from "./routes/Contact/Contact.jsx";
+import { CartProvider } from "./hook/useCartContext.jsx";
+import { CheckoutSuccessPage } from "./routes/Success/CheckoutSuccessPage.jsx";
+import { CartPage } from "./routes/Cart/CartPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,11 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/checkout",
-        element: <Checkout />,
+        element: <CartPage />,
       },
       {
         path: "/specific/:id",
@@ -35,14 +32,20 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        path: "/checkout-success",
+        element: <CheckoutSuccessPage />,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <RouterProvider router={router} />
-    </HelmetProvider>
+    <CartProvider>
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
+    </CartProvider>
   </React.StrictMode>
 );

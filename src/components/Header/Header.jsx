@@ -1,6 +1,5 @@
 import { Nav } from "../Nav/Nav";
 import { useToggler } from "../../hook/useToggler";
-import { Cart } from "../../routes/Cart/Cart";
 
 export function Header() {
   const [active, handleActive] = useToggler();
@@ -12,7 +11,6 @@ export function Header() {
           Every<span className="text-blue-normal">Cart</span>
         </h1>
         <div className="flex items-center text-white">
-          <Cart />
           <Button handleActive={handleActive} />
         </div>
         <Nav active={active} handleActive={handleActive} />
@@ -22,6 +20,7 @@ export function Header() {
 }
 
 /* Components  */
+// eslint-disable-next-line react/prop-types
 function Button({ handleActive }) {
   return (
     <button
