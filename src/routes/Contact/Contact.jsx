@@ -20,7 +20,6 @@ export function Contact() {
     e.preventDefault();
     console.log(formData);
 
-    /*  Clear the inputs */
     setFormData({
       fullName: "",
       subject: "",

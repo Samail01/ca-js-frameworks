@@ -4,9 +4,8 @@ import { CartIcon } from "../Cart/CartIcon";
 
 // eslint-disable-next-line react/prop-types
 export function Nav({ active, handleActive }) {
-  // Function to close the nav when a link is clicked
   const handleLinkClick = () => {
-    handleActive(); // This function toggles the navigation
+    handleActive();
   };
 
   return (

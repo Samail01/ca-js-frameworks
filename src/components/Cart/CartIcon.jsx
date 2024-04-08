@@ -11,14 +11,12 @@ export function CartIcon() {
 
   return (
     <button onClick={goToCart} className="relative lg:relative lg:m-5 lg:z-50">
-      {/* Badge showing number of items in cart */}
       {cartItems.length > 0 && (
         <span className="absolute -top-2 -right-2 bg-red-600 text-xs rounded-full px-2 py-1">
           {cartItems.length}
         </span>
       )}
 
-      {/* SVG for the cart icon */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

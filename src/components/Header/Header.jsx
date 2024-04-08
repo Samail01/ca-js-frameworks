@@ -18,8 +18,6 @@ export function Header() {
     </header>
   );
 }
-
-/* Components  */
 // eslint-disable-next-line react/prop-types
 function Button({ handleActive }) {
   return (
