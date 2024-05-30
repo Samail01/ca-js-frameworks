@@ -14,14 +14,11 @@ EveryCart is a responsive and user-friendly eCommerce platform built with React.
 
 ## Getting started 
 
-1. Clone the repo
-   git clone https://github.com/Samail01/ca-js-frameworks.git
+1. Clone the repo | git clone https://github.com/Samail01/ca-js-frameworks.git
 
-2. Install the dependencies
-   npm install
+2. Install the dependencies | npm install
 
-3. Run the app
-   npm run dev
+3. Run the app | npm run dev
 
 
 ## Contact
