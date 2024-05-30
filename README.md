@@ -1,8 +1,36 @@
-# React + Vite
+# JavaScript Frameworks CA | EveryCart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img width="1438" alt="everycart-screen" src="https://github.com/Samail01/ca-js-frameworks/assets/112164712/6af079b3-1561-4eda-b7a9-56a7439a7e04">
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+EveryCart is a responsive and user-friendly eCommerce platform built with React. It features a comprehensive product listing on the homepage, dynamic individual product pages with detailed information, a seamless shopping cart experience, and a smooth checkout process. The site includes a contact form with validation and provides real-time search capabilities to enhance the user experience.
+
+## Built with
+
+- React.js
+- Tailwind css
+  
+
+## Getting started 
+
+1. Clone the repo
+   git clone https://github.com/Samail01/ca-js-frameworks.git
+
+2. Install the dependencies
+   npm install
+
+3. Run the app
+   npm run dev
+
+
+## Contact
+
+[LinkedIn] https://www.linkedin.com/in/samail-pugaev-147521248/
+
+[Email] sapug.2001@hotmail.com
+
+
+
+
+
