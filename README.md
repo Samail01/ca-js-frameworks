@@ -10,7 +10,11 @@ EveryCart is a responsive and user-friendly eCommerce platform built with React.
 
 - React.js
 - Tailwind css
-  
+
+## Live Link
+
+https://cute-churros-fb88ab.netlify.app
+
 
 ## Getting started 
 
